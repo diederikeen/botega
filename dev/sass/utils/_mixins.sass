@@ -1,0 +1,177 @@
+//Mediaqueries
+@mixin mq-mini
+    @media (max-width: 480px)
+        @content
+
+@mixin mq-xs
+    @media (max-width: 767px)
+        @content
+
+@mixin mq-sm
+    @media (min-width: 768px) and (max-width: 992px)
+        @content
+
+@mixin mq-md
+    @media (min-width: 992px) and (max-width: 1200px)
+        @content
+
+@mixin mq-mdmin
+    @media (min-width: 1200px) and (max-width: 1220px)
+        @content
+
+@mixin mq-netbook
+    @media (max-height: 800px)
+        @content
+
+@mixin mq-desk
+    @media (min-width: 992px)
+        @content
+
+@mixin mq-lg
+    @media (min-width: 1200px)
+        @content
+
+@mixin mq-xl
+    @media (min-width: 1220px)
+        @content
+
+@mixin mq-xlg
+    @media (min-width: 1400px)
+        @content
+
+@mixin mq-min-sm
+    @media (min-width: 768px)
+        @content
+
+@mixin mq-min-md
+    @media (min-width: 992px)
+        @content
+
+//Transitions
+@mixin transition($transition-property, $transition-time, $method)
+    -webkit-transition: $transition-property $transition-time $method
+    -moz-transition: $transition-property $transition-time $method
+    -ms-transition: $transition-property $transition-time $method
+    -o-transition: $transition-property $transition-time $method
+    transition: $transition-property $transition-time $method
+
+// animation
+@mixin animation($str)
+    -webkit-animation: #{$str}
+    -moz-animation: #{$str}
+    -ms-animation: #{$str}
+    -o-animation: #{$str}
+    animation: #{$str}
+
+
+// keyframes mixin
+@mixin keyframes($name)
+    @-webkit-keyframes #{$name}
+        @content
+    @-moz-keyframes #{$name}
+        @content
+    @-ms-keyframes #{$name}
+        @content
+    @keyframes #{$name}
+        @content
+
+@mixin animation($str)
+    -webkit-animation: #{$str}
+    -moz-animation: #{$str}
+    -ms-animation: #{$str}
+    -o-animation: #{$str}
+    animation: #{$str}
+
+//Translate
+@mixin translate($x,$y)
+    -ms-transform: translate($x,$y)
+    -webkit-transform: translate($x,$y)
+    transform: translate($x,$y)
+
+//Placeholder
+@mixin input-placeholder($color)
+    &::-webkit-input-placeholder
+        color: $color
+    &:-moz-placeholder
+        color: $color
+    &::-moz-placeholder
+        color: $color
+    &:-ms-input-placeholder
+        color: $color
+
+//Rotate
+@mixin rotate($deg)
+    -ms-transform: rotate($deg)
+    -webkit-transform: rotate($deg)
+    transform: rotate($deg)
+
+//Scale
+@mixin scale($scaleW,$scaleH)
+    -ms-transform: scale($scaleW,$scaleH)
+    -webkit-transform: scale($scaleW,$scaleH)
+    transform: scale($scaleW,$scaleH)
+
+//Rotate and translate
+@mixin rotate_translate($deg, $x, $y)
+    -ms-transform: rotate($deg) translate($x, $y)
+    -webkit-transform: rotate($deg) translate($x, $y)
+    transform: rotate($deg) translate($x, $y)
+
+// transform origin
+@mixin transform_origin($x,$y)
+    -ms-transform-origin: $x $y
+    -webkit-transform-origin: $x $y
+    transform-origin: $x $y
+
+//Position absolute
+@mixin pos-abs ($top: auto, $right: auto, $bottom: auto, $left: auto)
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+    position: absolute
+
+//Font
+@mixin font-primary($size, $weight)
+    font-size: $size
+    font-weight: $weight
+    font-family: $primary-font
+
+//Font color placeholder
+@mixin input-placeholder($color)
+    &::-webkit-input-placeholder
+        color: $color
+    &:-moz-placeholder
+        color: $color
+    &::-moz-placeholder
+        color: $color
+    &:-ms-input-placeholder
+        color: $color
+
+@mixin quantity-query( $number, $comparison: 'equal' )
+    $nth: ''
+
+    @if index( ('greater' 'more' '>'), $comparison )
+        $nth: 'n + #{$number}'
+    @else if index( ('less' 'fewer' '<'), $comparison )
+        $nth: '-n + #{$number}'
+    @else if index( ('equal' 'same' '='), $comparison )
+        $nth: $number
+
+
+    &:nth-last-child(#{$nth}):first-child
+    &,
+    & ~ *
+        @content
+
+@mixin qq-equal($number)
+    @include quantity-query($number, equal)
+        @content
+
+@mixin qq-equal($number)
+    @include quantity-query($number, greater)
+        @content
+
+@mixin qq-equal($number)
+    @include quantity-query($number, less)
+        @content

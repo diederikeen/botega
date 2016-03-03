@@ -1,0 +1,38 @@
+.footer
+    text-align: center
+    padding-top: 100px
+    padding-bottom: 25px
+
+    @include mq-xs
+        padding-top: 50px
+
+    .facebook
+        color: #39579A
+        border-bottom: 2px solid rgba(#39579A, .2)
+
+        &:hover
+            border-bottom: 2px solid rgba(#39579A, 1)
+
+    .instagram
+        color: #4F7EA6
+        margin: 0px 30px
+        border-bottom: 2px solid rgba(#4F7EA6, .2)
+
+        &:hover
+            border-bottom: 2px solid rgba(#4F7EA6, 1)
+
+    .twitter
+        color: #00ABF0
+        border-bottom: 2px solid rgba(#00ABF0, .2)
+
+        &:hover
+            border-bottom: 2px solid rgba(#00ABF0, 1)
+
+    &__copyright
+        margin-top: 150px
+        opacity: .2
+        font-size: 18px
+        text-transform: uppercase
+
+        @include mq-xs
+            margin-top: 75px
