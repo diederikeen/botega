@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     include = require('gulp-include'),
     fileinclude = require('gulp-file-include'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    prefixer = require('gulp-autoprefixer');
 
 var muraRoot = '../plugins/MuraFW1/thermae/includes/assets';
 
@@ -20,9 +21,9 @@ gulp.task('sass', function () {
     return gulp.src('dev/sass/*.sass')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(require('gulp-autoprefixer')({
-            browsers: [ 'last 2 versions' ]
-        }))
+        // .pipe(require('gulp-autoprefixer')({
+        //     browsers: [ 'last 2 versions' ]
+        // }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('public/assets/css'));
 });
