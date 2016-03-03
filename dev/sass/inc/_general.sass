@@ -1,1 +1,54 @@
+//desktop width
+//1240px
+body
+    background-color: #F7F7F7
 
+//text-deco
+a
+    text-decoration: none
+    font-size: 12px
+    text-transform: uppercase
+    color: #65708F
+    padding-bottom: 6px
+    border-bottom: 2px solid rgba(#65708E, .2)
+    @include transition(all, 125ms, eas-in-out)
+    font-weight: 700
+
+    &:hover
+        border-bottom: 2px solid rgba(#65708E, 1)
+
+ul
+    list-style-type: none
+    padding: 0px
+    margin: 0px
+
+
+.opening-hours
+    float: right
+    margin-top: 20px
+    color: #999999
+
+    @include mq-xs
+        float: left
+        margin-top: 50px
+
+    %list_style
+        font-size: 13px
+        color: #666
+        text-transform: uppercase
+        display: inline-block
+
+    &__day
+        font-size: 13px
+        color: #999
+        text-transform: uppercase
+        display: inline-block
+        width: 50px
+
+    &__open
+        @extend %list_style
+        margin-right: 10px
+
+    &__close
+        @extend %list_style
+        margin-left: 10px
