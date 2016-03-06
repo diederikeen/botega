@@ -915,7 +915,8 @@ th {
     display: none !important; } }
 
 body {
-  background-color: #F7F7F7; }
+  background-color: #F7F7F7;
+  font-family: "proxima-nova"; }
 
 a {
   text-decoration: none;
@@ -939,7 +940,8 @@ ul {
 .opening-hours {
   float: right;
   margin-top: 20px;
-  color: #999999; }
+  color: #999999;
+  font-weight: 100; }
   @media (max-width: 767px) {
     .opening-hours {
       float: left;
@@ -956,7 +958,7 @@ ul {
     display: inline-block;
     width: 50px; }
   .opening-hours__open {
-    margin-right: 10px; }
+    width: 40px; }
   .opening-hours__close {
     margin-left: 10px; }
 
@@ -973,14 +975,18 @@ ul {
   .header__title {
     font-size: 72px;
     color: #333;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-family: "freight-big-pro";
+    letter-spacing: 4px; }
     @media (max-width: 767px) {
       .header__title {
         font-size: 36px; } }
   .header__subtitle {
     font-size: 20px;
     color: #868686;
-    margin-top: 0px; }
+    margin-top: 0px;
+    font-weight: 300;
+    letter-spacing: 1.6; }
     @media (max-width: 767px) {
       .header__subtitle {
         font-size: 16px; } }
@@ -1012,7 +1018,9 @@ ul {
     margin-top: 150px;
     opacity: .2;
     font-size: 18px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: "freight-big-pro";
+    letter-spacing: 1.5px; }
     @media (max-width: 767px) {
       .footer__copyright {
         margin-top: 75px; } }
@@ -1086,10 +1094,12 @@ ul {
     color: #333;
     margin: 0px;
     margin-bottom: 15px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 1.6px; }
   .location__phone {
     font-size: 16px;
-    margin: 0px; }
+    margin: 0px;
+    color: #999999; }
   .location__adress {
     list-style-type: none;
     padding: 0px;
